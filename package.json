@@ -1,6 +1,6 @@
 {
 	"name": "chipcryptbase",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "A base library for asymmetric and symmetric encryption",
 	"target": "module",
 	"main": "./dist/index.js",
@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"clean": "rm -rf dist/",
-		"build": "npm run clean && tsc -p tsconfig.json",
+		"build": "npm run clean && tsc -p tsconfig.build.json",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
@@ -20,6 +20,7 @@
 	"author": "Nathan Allan",
 	"license": "MIT",
 	"devDependencies": {
-		"typescript": "^5.0.2"
+		"typescript": "^5.0.2",
+		"@types/node": "^20.11.5"
 	}
 }
