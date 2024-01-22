@@ -1,6 +1,6 @@
 {
 	"name": "chipcryptbase",
-	"version": "0.1.7",
+	"version": "0.1.9",
 	"description": "A base library for asymmetric and symmetric encryption",
 	"target": "module",
 	"main": "./dist/index.js",
