@@ -25,6 +25,19 @@ export interface CryptoHash {
 	getExpirationBin(codeBin: Uint8Array): number;
 
 	/**
+ 	 * @param now The current time in milliseconds since the epoch. This is used to validate the expiration of the Code.
+	 * @returns true if the given session code is expired
+	 */
+	isExpired(code: string, now?: number): boolean;
+
+	/**
+	 * @param codeBytes The binary representation of the code to validate.
+ 	 * @param now The current time in milliseconds since the epoch. This is used to validate the expiration of the Code.
+	 * @returns true if the given session code is expired
+	 */
+	isExpiredBin(codeBytes: Uint8Array, now?: number): boolean;
+
+	/**
 	 * Generates a unique Code with sufficient entropy based on the given options.
 	 * @param now The current time in milliseconds since the epoch. This is used to calculate the expiration of the Code. Note: may not be stored to millisecond granularity.
 	 * @throws An error if a Code with sufficient entropy cannot be generated within the maximum number of tries specified in the options.
