@@ -1,4 +1,3 @@
-import { describe, expect, test, beforeEach } from '@jest/globals';
 import { arrayToBase64, base64ToArray } from './utility';
 
 describe('runsTest', () => {
@@ -8,18 +7,19 @@ describe('runsTest', () => {
 		const binString = arrayToBinaryString(array);
 
 		expect(origString).toBe(binString);
-		//expect(binarySequence).toBe(bufferToBinaryString(bytes));
 	});
 
-	// test('Base64 to array conversion', () => {
-	// 	var bytes = Buffer.from(binaryStringToArray('1010101100011010'), 'base64');
-	// 	var bytesBase64 = bytes.toString('base64');
-	// 	var backToBytes = Buffer.from(bytesBase64, 'base64');
-	// 	const binarySequence = arrayToBase64(backToBytes);
+	test('Base64 to array conversion', () => {
+		// TODO: resurrect
+		// const origString = '1010101100011010';
+		// var bytes = Buffer.from(binaryStringToArray('1010101100011010'), 'base64');
+		// var bytesBase64 = bytes.toString('base64');
+		// var backToBytes = Buffer.from(bytesBase64, 'base64');
+		// const binarySequence = arrayToBase64(backToBytes);
 
-	// 	expect(backToBytes.toString('base64')).toBe(bytesBase64);
-	// 	expect(binarySequence).toBe(bufferToBinaryString(bytes));
-	// });
+		// expect(backToBytes.toString('base64')).toBe(bytesBase64);
+		// expect(binarySequence).toBe(bufferToBinaryString(bytes));
+	});
 });
 
 function binaryStringToArray(binaryString: string): Uint8Array {

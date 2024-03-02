@@ -50,3 +50,6 @@ Nodejs and browser
 
 * Build: ```npm run build```
 	* Builds into an ES module
+* Test: ```npm test```
+* Install Jest VSCode extension for easy test debugging
+* Add .editorconfig support to VSCode or other IDE to honor conventions
