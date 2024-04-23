@@ -1,17 +1,28 @@
 /** Interface for generating and validating secure hashes (Nonces) using highly random salt values (Codes) */
 export interface CryptoHash {
 	/**
-	 * Ensures that the given Code (salt) passes all of the tests for high randomness and expiration.
-	 * @param now The current time in milliseconds since the epoch. This is used to validate the expiration of the Code.
+	 * Ensures that the given Code (salt) passes all of the tests for high randomness.
 	 */
-	isValid(code: string, now?: number): boolean;
+	isValid(code: string): boolean;
 
 	/**
 	 * Ensures that the given Code (salt) passes all of the tests for high randomness.
 	 * @param codeBin The binary representation of the code to validate.
+	 */
+	isValidBin(codeBin: Uint8Array): boolean;
+
+	/**
+	 * Ensures that the given Code (salt) passes all of the tests for high randomness and checks expiration.
 	 * @param now The current time in milliseconds since the epoch. This is used to validate the expiration of the Code.
 	 */
-	isValidBin(codeBin: Uint8Array, now?: number): boolean;
+	isCurrentlyValid(code: string, now?: number): boolean;
+
+	/**
+	 * Ensures that the given Code (salt) passes all of the tests for high randomness and checks expiration.
+	 * @param codeBin The binary representation of the code to validate.
+	 * @param now The current time in milliseconds since the epoch. This is used to validate the expiration of the Code.
+	 */
+	isCurrentlyValidBin(codeBin: Uint8Array, now?: number): boolean;
 
 	/**
 	 * @returns The expiration date/time in milliseconds since the Unix epoch. Note: this may not be to millisecond granularity.
