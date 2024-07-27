@@ -46,6 +46,11 @@ Nodejs and browser
 * [ChipCrypt](https://github.com/gotchoices/ChipCrypt) - implementation of asymmetric and symmetric related interfaces
 * [ChipCode](https://github.com/gotchoices/ChipCode) - implementation of CryptoHash interface
 
+
+### TODO:
+
+* Switch to [Java Web Key](https://openid.net/specs/draft-jones-json-web-key-03.html) format
+
 ### Development
 
 * Build: ```npm run build```
